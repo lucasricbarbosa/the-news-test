@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Flame } from "lucide-react";
 import type { HabitsModel } from "@/data/habits";
 import { HERO_STATUS } from "@/data/habits";
