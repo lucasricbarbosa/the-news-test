@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 47 24% 93%;
+    --foreground: 240 4% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 4% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 4% 9%;
+
+    --primary: 48 95% 57%;
+    --primary-foreground: 48 63% 6%;
+
+    --secondary: 48 31% 94%;
+    --secondary-foreground: 240 4% 9%;
+
+    --muted: 48 31% 94%;
+    --muted-foreground: 240 4% 38%;
+
+    --accent: 48 31% 94%;
+    --accent-foreground: 240 4% 9%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 144 67% 37%;
+    --success-foreground: 0 0% 100%;
+
+    --faint: 240 4% 62%;
+
+    --border: 44 17% 87%;
+    --input: 44 17% 87%;
+    --ring: 48 95% 57%;
+
+    --radius: 0.75rem;
+
+    --brand-gradient: linear-gradient(135deg, #f9d029, #fdce70, #ff8a3d);
+    --brand-soft: rgba(249, 208, 41, 0.1);
+    --brand-soft-border: rgba(249, 208, 41, 0.45);
+    --brand-icon-bg: rgba(249, 208, 41, 0.16);
+    --success-soft: rgba(34, 197, 94, 0.1);
+    --success-soft-border: rgba(34, 197, 94, 0.32);
+    --danger-soft: rgba(220, 58, 58, 0.08);
+    --danger-soft-border: rgba(220, 58, 58, 0.4);
+    --hairline: rgba(0, 0, 0, 0.06);
+
+    color-scheme: light;
+  }
+
+  .dark {
+    --background: 240 7% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 7% 11%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 7% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 48 95% 57%;
+    --primary-foreground: 48 63% 6%;
+
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 6% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 240 7% 6%;
+
+    --faint: 240 4% 45%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 48 95% 57%;
+
+    --brand-gradient: linear-gradient(135deg, #f9d029, #fdce70, #ff8a3d);
+    --brand-soft: rgba(249, 208, 41, 0.08);
+    --brand-soft-border: rgba(249, 208, 41, 0.45);
+    --brand-icon-bg: rgba(249, 208, 41, 0.18);
+    --success-soft: rgba(34, 197, 94, 0.12);
+    --success-soft-border: rgba(34, 197, 94, 0.32);
+    --danger-soft: rgba(239, 68, 68, 0.08);
+    --danger-soft-border: rgba(239, 68, 68, 0.4);
+    --hairline: rgba(255, 255, 255, 0.07);
+
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+  }
+
+  .border-hairline {
+    border-color: var(--hairline);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-brand-gradient {
+    background-image: var(--brand-gradient);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
